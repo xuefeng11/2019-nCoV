@@ -8,12 +8,12 @@ df = pd.read_csv("smiles.pubchem.txt")
 print(df.size)
 df = pd.DataFrame(df)
 print(df.shape)
-youtube_ids=df["smile"]
-youtube_ids2=list(dict.fromkeys(youtube_ids))
-#print(youtube_ids2)
-print(len(youtube_ids2))
+smile_df=df["smile"]
+smile_df2=list(dict.fromkeys(smile_df))
 
-data = {"unique_smile":youtube_ids2}
+print(len(smile_df2))
+
+data = {"unique_smile":smile_df2}
 df_out = pd.DataFrame(data)
 df_out.to_csv("pubchem_smile_unique.csv",index=False)
 
